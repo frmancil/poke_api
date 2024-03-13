@@ -1,2 +1,0 @@
-class AbilityPokemon < ApplicationRecord
-end
