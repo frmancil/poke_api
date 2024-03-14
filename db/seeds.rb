@@ -72,9 +72,7 @@ pokemon_list['results'].each do |pokemon|
         poke_type.save
     end
 
-    new_image = Image.new
-    new_image.url = pokemon_recovered['sprites']['front_default']
-    new_image.pokemon_name = pokemon_recovered['name']
+    new_image = Image.create(pokemon_name: pokemon_recovered['name'], url: pokemon_recovered['sprites']['front_default'])
 
 end
 
