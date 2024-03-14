@@ -1,0 +1,14 @@
+<h1>Types</h1>
+
+<%= link_to "Pokemon", "/" %>
+<br>
+<%= link_to "Abilities", abilities_path %>
+
+<% @types.each do |type| %>
+    <label>
+        <%= type.name %>
+    </label>
+    <ul>
+    <%= link_to type.name, type %>
+    </ul>
+<% end %>

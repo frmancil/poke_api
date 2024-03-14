@@ -1,0 +1,8 @@
+<h1><%= @type.name %></h1>
+
+<%= link_to "Back", types_path %>
+
+<% @type.pokemons.each do |poke_type| %>
+    <label><%= poke_type.name %></label>
+    </br>
+    <% end %>

@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
     def index
-        @pokemons = Pokemon.includes(:types, :abilities).all
+        @pokemons = Pokemon.all
     end
     def show
         @pokemon = Pokemon.find(params[:id])

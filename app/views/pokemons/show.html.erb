@@ -1,5 +1,7 @@
 <h1><%= @pokemon.name %></h1>
 
+<%= link_to "Back", "/" %>
+
 <p><%= @pokemon.height %></p>
 <p><%= @pokemon.weight %></p>
 <p><%= @pokemon.color %></p>
@@ -11,7 +13,7 @@
 Pokemon Types:
 </br>
 </br>
-<%= @pokemon.types.each do |poke_type| %>
+<% @pokemon.types.each do |poke_type| %>
     <label><%= poke_type.name %></label>
     </br>
     <% end %>
@@ -23,7 +25,7 @@ Pokemon Types:
 Pokemon Abilities:
 </br>
 </br>
-<%= @pokemon.abilities.each do |poke_abs| %>
+<% @pokemon.abilities.each do |poke_abs| %>
     <label><%= poke_abs.name %></label>
     </br>
     <label><%= poke_abs.description %></label>
