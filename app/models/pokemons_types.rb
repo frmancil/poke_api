@@ -1,0 +1,2 @@
+class PokemonsTypes < ApplicationRecord
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_13_214025) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_13_234737) do
   create_table "abilities", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_214025) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ability_pokemons", force: :cascade do |t|
+  create_table "abilities_pokemons", force: :cascade do |t|
     t.integer "pokemon_id"
     t.integer "ability_id"
     t.datetime "created_at", null: false
@@ -32,13 +32,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_214025) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokemon_types", force: :cascade do |t|
-    t.integer "pokemon_id"
-    t.integer "type_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
     t.integer "height"
@@ -46,6 +39,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_214025) do
     t.string "color"
     t.string "evolves_from"
     t.string "generation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pokemons_types", force: :cascade do |t|
+    t.integer "pokemon_id"
+    t.integer "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,2 @@
+class AbilitiesPokemons < ApplicationRecord
+end
