@@ -5,12 +5,11 @@
 <%= link_to "Types", types_path %>
 
 <% @pokemons.each do |pokemon| %>
-    <label>
-        <%= pokemon.name %>
-    </label>
     <ul>
     <%= link_to pokemon.name, pokemon %>
+    <% unless pokemon.url.blank? %>
     <%= image_tag pokemon.url %>
+    <% end %>
     </ul>
 <% end %>
 
