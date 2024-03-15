@@ -2,9 +2,9 @@
 
 <%= link_to "Back", abilities_path %>
 
-<h1><%= @ability.description %></h1>
+<p><%= @ability.description %></p>
 
 <% @ability.pokemons.each do |poke_ab| %>
-    <label><%= poke_ab.name %></label>
+    <%= link_to poke_ab.name, poke_ab %>
     </br>
-    <% end %>
+<% end %>

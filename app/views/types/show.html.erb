@@ -2,7 +2,10 @@
 
 <%= link_to "Back", types_path %>
 
+</br>
+
 <% @type.pokemons.each do |poke_type| %>
-    <label><%= poke_type.name %></label>
+    <%= image_tag poke_type.url %>
+    <%= link_to poke_type.name, poke_type %>
     </br>
-    <% end %>
+<% end %>

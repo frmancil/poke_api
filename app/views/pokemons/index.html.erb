@@ -1,9 +1,5 @@
 <h1>Pokemons</h1>
 
-<%= link_to "Abilities", abilities_path %>
-<br>
-<%= link_to "Types", types_path %>
-
 <% @pokemons.each do |pokemon| %>
     <ul>
     <%= link_to pokemon.name, pokemon %>
