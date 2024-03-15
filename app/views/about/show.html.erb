@@ -1,67 +1,64 @@
-<%= image_tag "ERD_poke_api.png" %>
+<div class='about-container'>
 
 <div>
-<p>
-I'm going to use the pokemon_api and their numerous endpoints to populate three tables, 
-pokemon, types and abilities. A pokemon can have types, a type can have multiple pokemons. 
-A pokemon can have abilities, an ability can be in multiple pokemons. To populate pokemon table 
-I'm going to use the pokemon, pokemon-species and generation endpoints. To populate types table 
-I'm gonna use the type endpoint. To populate abilities table I'm going to use the ability endpoint. 
-There are two many to many associations that create the tables pokemons_types and abilities_pokemons, 
+	<h1 class='about-title'>Database ERD</h1>
+	<%= image_tag "ERD_poke_api.png" %>
+</div>
+
+<div>
+<h1 class='about-title'>Describe Dataset</h1>
+<div class='about-paragraph'>
+<p>I'm going to use the pokemon_api and their numerous endpoints to populate three tables, 
+pokemon, types and abilities.</p>
+
+<p>A pokemon can have types, a type can have multiple pokemons. 
+A pokemon can have abilities, an ability can be in multiple pokemons.</p>
+
+<p>To populate pokemon table  I'm going to use the pokemon, pokemon-species and generation endpoints. 
+To populate types table  I'm gonna use the type endpoint. To populate abilities table 
+I'm going to use the ability endpoint.</p>
+
+<p>There are two many to many associations that create the tables pokemons_types and abilities_pokemons, 
 so you can see a list of pokemon depending their type, and a list of abilities for each pokemon.
 </p>
 </div>
+</div>
 
 <div>
+<h4>Table Pokemon</h4>
 <p>
-Table Pokemon
-
-	name: https://pokeapi.co/api/v2/pokemon?limit=300
-
-	height: https://pokeapi.co/api/v2/pokemon/{name}
-	weight: https://pokeapi.co/api/v2/pokemon/{name}
-	url: https://pokeapi.co/api/v2/pokemon/{name}
-	
-	color: https://pokeapi.co/api/v2/pokemon-species/{name}/
-	evolves_from https://pokeapi.co/api/v2/pokemon-species/{name}/
-	
-	generation: https://pokeapi.co/api/v2/pokemon-species/{name}/ -> https://pokeapi.co/api/v2/generation/id/
+	<p>name: https://pokeapi.co/api/v2/pokemon?limit=300</p>
+	<p>height: https://pokeapi.co/api/v2/pokemon/{name}</p>
+	<p>weight: https://pokeapi.co/api/v2/pokemon/{name}</p>
+	<p>url: https://pokeapi.co/api/v2/pokemon/{name}</p>
+	<p>color: https://pokeapi.co/api/v2/pokemon-species/{name}/</p>
+	<p>evolves_from https://pokeapi.co/api/v2/pokemon-species/{name}/</p>
+	<p>generation: https://pokeapi.co/api/v2/pokemon-species/{name}/ -> https://pokeapi.co/api/v2/generation/id/</p>
 </p>
 </div>
 
 
 <div>
-<p>
-Table Types
-
-	name: https://pokeapi.co/api/v2/type?limit=50
-</p>
+<h4>Table Types</h4>
+	<p>name: https://pokeapi.co/api/v2/type?limit=50</p>
 </div>
 
 <div>
-<p>
-Table Ability
-
-	name: https://pokeapi.co/api/v2/ability?limit=300
-	
-	description: https://pokeapi.co/api/v2/ability/{name}/
-</p>
+<h4>Table Ability</h4>
+	<p>name: https://pokeapi.co/api/v2/ability?limit=300</p>
+	<p>description: https://pokeapi.co/api/v2/ability/{name}/</p>
 </div>
 	
 <div>
-<p>
-Table Pokemons_Types
-
-	type_name (types)
-	pokemon_name (pokemon)
-</p>
+<h4>Table Pokemons_Types</h4>
+<p>type_name (types)</p>
+<p>pokemon_name (pokemon)</p>
 </div>
 
 <div>
-<p>
-Table Abilities_Pokemons	
+<h4>Table Abilities_Pokemons</h4>
+<p>ability_name (ability)</p>
+<p>pokemon_name (pokemon)</p>
+</div>
 
-	ability_name (ability)
-	pokemon_name (pokemon)
-</p>
 </div>

@@ -61,3 +61,15 @@
  h1 {
     text-transform: uppercase;
  }
+
+ .about-container {
+   margin-left: 10%;
+ }
+
+ .about-title {
+   margin-left: 32%;
+ }
+
+ .about-paragraph {
+   width: 90%;
+ }
