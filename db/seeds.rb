@@ -35,7 +35,7 @@ def pokemon_ability(name)
 end
 
 pokemon_list = fetch("https://pokeapi.co/api/v2/pokemon?limit=300")
-types_list = fetch("https://pokeapi.co/api/v2/type?limit=100")
+types_list = fetch("https://pokeapi.co/api/v2/type?limit=50")
 pokemon_abilities = fetch("https://pokeapi.co/api/v2/ability?limit=300")
 
 types_list['results'].each do |type|
@@ -62,6 +62,7 @@ pokemon_list['results'].each do |pokemon|
         new_pokemon.evolves_from = pokemon_species['evolves_from_species']['name']
     end
     new_pokemon.generation = pokemon_generation['main_region']['name']
+    new_pokemon.url = pokemon_recovered['sprites']['front_default']
     new_pokemon.save
 
     pokemon_types.each do |pokemon_type|
@@ -71,8 +72,6 @@ pokemon_list['results'].each do |pokemon|
         poke_type.pokemons << poke
         poke_type.save
     end
-
-    new_image = Image.create(pokemon_name: pokemon_recovered['name'], url: pokemon_recovered['sprites']['front_default'])
 
 end
 
