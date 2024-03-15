@@ -7,12 +7,19 @@
 <% end %>
 
 <% @pokemons.each do |pokemon| %>
-    <ul>
-    <%= link_to pokemon.name, pokemon %>
-    <% unless pokemon.url.blank? %>
-    <%= image_tag pokemon.url %>
-    <% end %>
-    </ul>
+    <% if user_signed_in? %>
+        <ul>
+            <%= link_to pokemon.name, pokemon %>
+            <% unless pokemon.url.blank? %>
+                <%= image_tag pokemon.url %>
+            <% end %>
+        </ul>
+        <% else %>
+            <%= pokemon.name %>
+            <% unless pokemon.url.blank? %>
+                <%= image_tag pokemon.url %>
+            <% end %>
+        <% end %> 
 <% end %>
 
 <%= paginate @pokemons %>
