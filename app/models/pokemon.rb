@@ -4,4 +4,17 @@ class Pokemon < ApplicationRecord
 
     validates :name, presence: true
     validates :generation, presence: true
+
+    def self.search(search)
+        if search
+            pokemon = Pokemon.find_by(name: search)
+                if pokemon
+                    self.where(id: pokemon)
+                else
+                    @pokemons = Pokemon.all
+                end
+            else
+                @pokemons = Pokemon.all
+            end
+        end
 end
